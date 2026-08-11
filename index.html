@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- EDIT: your name / title in the <title> below -->
+<title>Mina Nikolić — LLMs & Explainable AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FCFCFA;
+    --ink:#18181B;
+    --muted:#6C6C72;
+    --faint:#9A9A9E;
+    --line:#E5E4DF;
+    --accent:#2743B0;
+    --accent-wash:#EDEFF8;
+    --serif:'Spectral',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(2.5rem,7vw,6rem) 1.5rem;
+  }
+  .wrap{max-width:680px;margin:0 auto}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--faint);
+    display:flex;align-items:center;gap:10px;margin-bottom:1.4rem;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(2.2rem,6vw,3rem);line-height:1.05;
+    letter-spacing:-.01em;margin-bottom:.6rem;
+  }
+  .role{
+    font-family:var(--mono);font-size:13px;color:var(--accent);
+    letter-spacing:.02em;margin-bottom:1.5rem;
+  }
+  .intro{
+    font-family:var(--serif);font-size:1.2rem;line-height:1.6;
+    color:var(--ink);max-width:34em;margin-bottom:1.8rem;
+  }
+  .intro em{font-style:italic;color:var(--accent)}
+
+  .links{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;font-family:var(--mono);font-size:13px}
+  .links a{
+    color:var(--ink);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:2px;
+    transition:border-color .15s,color .15s;
+  }
+  .links a:hover,.links a:focus-visible{color:var(--accent);border-color:var(--accent)}
+
+  section{margin-top:clamp(3rem,7vw,4.5rem)}
+
+  .item{padding:1.5rem 0;border-top:1px solid var(--line)}
+  .item:first-of-type{border-top:none;padding-top:.5rem}
+  .item-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+  .item-head h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;letter-spacing:-.01em}
+  .code-link{
+    font-family:var(--mono);font-size:12px;color:var(--accent);
+    text-decoration:none;white-space:nowrap;border-bottom:1px solid transparent;
+  }
+  .code-link:hover,.code-link:focus-visible{border-color:var(--accent)}
+  .item p{color:var(--muted);font-size:.98rem;margin:.5rem 0 .9rem;max-width:40em}
+  .tags{display:flex;flex-wrap:wrap;gap:.4rem}
+  .tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.02em;
+    color:var(--accent);background:var(--accent-wash);
+    padding:3px 9px;border-radius:2px;
+  }
+
+  .pub{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-top:1px solid var(--line)}
+  .pub:first-of-type{border-top:none}
+  .pub .t{font-size:.98rem;color:var(--ink)}
+  .pub .y{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap;padding-top:2px}
+  .more{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:.9rem}
+  .more a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line)}
+  .more a:hover,.more a:focus-visible{border-color:var(--accent)}
+
+  footer{margin-top:clamp(3rem,7vw,4.5rem);padding-top:1.4rem;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+  .fade{opacity:0;transform:translateY(10px);animation:rise .7s cubic-bezier(.2,.6,.2,1) forwards}
+  .fade:nth-child(2){animation-delay:.06s}
+  .fade:nth-child(3){animation-delay:.12s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ HERO — edit name, role, intro, and the 4 links ============ -->
+  <header>
+    <div class="eyebrow fade">PhD · Electrical Engineering and Computer Science · Machine learning and AI· </div>
+    <h1 class="fade">Mina Nikolić</h1>
+    <div class="role fade">PhD student &amp; Teaching Assistant - LLMs &amp; Explainable AI</div>
+    <p class="intro">I research large language models and interpretability, and build
+      retrieval-augmented, <em>explainable</em> ML systems end to end. Seven scientific
+      publications to date.</p>
+    <nav class="links">
+      <!-- EDIT these four URLs -->
+      <a href="https://github.com/minanikolic916">GitHub ↗</a>
+      <a href="https://scholar.google.com/citations?user=5fZpp54AAAAJ&hl=en">Google Scholar ↗</a>
+    </nav>
+  </header>
+
+  <!-- ============ SELECTED WORK — duplicate an .item block to add a project ============ -->
+  <section>
+    <div class="eyebrow">Selected work</div>
+    <article class="item">
+      <div class="item-head">
+        <h3>Explainable AI for medical imaging</h3>
+        <a class="code-link" href="https://github.com/minanikolic916/IntegrationXAIMed/tree/master">Code ↗</a>
+      </div>
+      <p>Integrated Grad-CAM and LIME into CNN classifiers on the MedMNIST benchmark to make
+        predictions interpretable, using explanation maps to analyze misclassified cases beyond
+        standard accuracy metrics.</p>
+      <div class="tags"><span class="tag">XAI</span><span class="tag">Grad-CAM</span><span class="tag">PyTorch</span></div>
+    </article>
+     <article class="item">
+      <div class="item-head">
+        <h3>Token-wise interpretability for LLMs</h3>
+        <a class="code-link" href="https://github.com/minanikolic916/ExpXAIforLLMs">Code ↗</a>
+      </div>
+      <p>An experimental framework for explaining LLM predictions by combining and scaling
+        the attributions from LIME and SHAP, then resolving them at the level of every
+        individual token - a method named token-wise interpretability.</p>
+      <div class="tags"><span class="tag">XAI</span><span class="tag">LLMs</span><span class="tag">LIME</span><span class="tag">SHAP</span></div>
+    </article>
+    <article class="item">
+      <div class="item-head">
+        <h3>RAG evaluation for Domain-specific QA in Serbian language</h3>
+        <a class="code-link" href="https://github.com/minanikolic916/RAGEval">Code ↗</a>
+      </div>
+      <p>A metric-driven evaluation approach for retrieval-augmented generation
+        question-answering in Serbian, using the LLM-as-a-judge paradigm to measure and
+        improve individual components of the pipeline.</p>
+      <div class="tags"><span class="tag">RAG</span><span class="tag">LLM-as-a-judge</span><span class="tag">Evaluation</span><span class="tag">low-resource-language</span></div>
+    </article>
+    <article class="item">
+      <div class="item-head">
+        <h3>LLM-aided explanations of model predictions</h3>
+        <a class="code-link" href="https://github.com/minanikolic916/XAI_tool_calling_llms">Code ↗</a>
+      </div>
+      <p>Adds a layer of interpretability by using an LLM's tool-calling capablities to turn LIME explanations of individual predictions into plain-language rationales - making black-box predictions transparent without requiring the reader to understand the XAI tool's internals.</p>
+      <div class="tags"><span class="tag">XAI</span><span class="tag">LLMs</span><span class="tag">Tool-calling</span><span class="tag">Natural language explanations</span></div>
+    </article>
+  </section>
+
+  <!-- ============ PUBLICATIONS — edit titles/years; link out to Scholar for the full list ============ -->
+  <section>
+    <div class="eyebrow">Publications</div>
+
+    <div class="pub">
+      <span class="t">Applying eXplainable AI techniques to interpret machine learning predictive models for the analysis of problematic internet use among adolescents</span>
+      <span class="y">2024</span>
+    </div>
+    <div class="pub">
+      <span class="t">The integration of explainable ai methods for the classification of medical image data</span>
+      <span class="y">2024</span>
+    </div>
+       <div class="pub">
+      <span class="t">Using machine learning algorithms and techniques for defining the impact of affective temperament types, content search and activities on the internet on the development of problematic internet use in adolescents’ population</span>
+      <span class="y">2024</span>
+    </div>
+     <div class="pub">
+      <span class="t">The experimental evaluation of different explainable ai techniques for large language models</span>
+      <span class="y">2024</span>
+    </div>
+      <div class="pub">
+      <span class="t">The Evaluation of Retrieval Augmented Generation Systems for Domain-Specific Question Answering in Serbian Language</span>
+      <span class="y">2025</span>
+    </div>
+    <p class="more">+ 2 more — <a href="https://scholar.google.com/citations?user=5fZpp54AAAAJ&hl=en">see full list on Google Scholar ↗</a></p>
+  </section>
+
+  <footer>© 2026 Mina Nikolić · built with GitHub Pages</footer>
+</div>
+</body>
+</html>
